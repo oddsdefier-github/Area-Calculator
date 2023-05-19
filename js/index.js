@@ -1,4 +1,3 @@
-
 const calculatorForm = document.getElementById('calculatorForm');
 const resultElement = document.getElementById('result');
 
@@ -14,7 +13,7 @@ calculatorForm.addEventListener('submit', function (event) {
 function areaRect(length, width) {
     const area = length * width;
     const roundedArea = area % 1 === 0 ? area : area.toFixed(2);
-    resultElement.innerHTML = `The area of rectangle is: ${roundedArea}`;
+    resultElement.innerHTML = `<span class="p-4 mb-5 text-sm text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400 ">The area of rectangle is: ${roundedArea}</span>`;
     return roundedArea;
 }
 
