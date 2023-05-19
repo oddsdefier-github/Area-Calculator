@@ -1,0 +1,15 @@
+{
+  "name": "rectangle-area-calculator",
+  "version": "1.0.0",
+  "description": "A JavaScript App that calculates the area of a rectangle.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "Jeffry James Paner",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-font-inter": "^3.0.1"
+  }
+}
