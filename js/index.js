@@ -1,5 +1,11 @@
 const calculatorForm = document.getElementById('calculatorForm');
 const resultElement = document.getElementById('result');
+const calculatorModal = document.getElementById("calc-modal");
+const calculatorToggle = document.getElementById("show-calc");
+let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+let themeToggleBtn = document.getElementById('theme-toggle');
+
 
 
 calculatorForm.addEventListener('submit', function (event) {
@@ -25,11 +31,8 @@ function areaRect(length, width) {
     return roundedArea;
 }
 
-const calculatorModal = document.getElementById("calc-modal")
-const calculatorToggle = document.getElementById("show-calc")
 
 calculatorModal.style.display = "none";
-
 calculatorToggle.addEventListener("click", function () {
     if (calculatorModal.style.display == "none") {
         calculatorModal.classList.remove("hide-modal");
@@ -48,19 +51,12 @@ calculatorToggle.addEventListener("click", function () {
 })
 
 
-
-
-let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
 // Change the icons inside the button based on previous settings
 if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     themeToggleLightIcon.classList.remove('hidden');
 } else {
     themeToggleDarkIcon.classList.remove('hidden');
 }
-
-let themeToggleBtn = document.getElementById('theme-toggle');
 
 themeToggleBtn.addEventListener('click', function () {
 
