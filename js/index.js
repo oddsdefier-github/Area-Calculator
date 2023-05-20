@@ -7,27 +7,46 @@ calculatorForm.addEventListener('submit', function (event) {
     const lengthRect = parseFloat(document.getElementById('length').value);
     const widthRect = parseFloat(document.getElementById('width').value);
     areaRect(lengthRect, widthRect);
-    calculatorForm.reset(); // Clear form values
+    calculatorForm.reset();
+    setTimeout(function () {
+        resultElement.classList.remove("animate-result");
+    }, 1000)
 });
+
+function resetInput() {
+    calculatorForm.reset();
+}
 
 function areaRect(length, width) {
     const area = length * width;
     const roundedArea = area % 1 === 0 ? area : area.toFixed(2);
-    resultElement.innerHTML = `<span class="p-4 mb-5 text-sm text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400 ">The area of rectangle is: ${roundedArea}</span>`;
+    resultElement.innerHTML = `<span class="dark:text-yellow-100 ">Area = <span class="font-bold">${roundedArea}</span> </span>`;
+    resultElement.classList.add("animate-result");
     return roundedArea;
 }
 
 const calculatorModal = document.getElementById("calc-modal")
 const calculatorToggle = document.getElementById("show-calc")
+
 calculatorModal.style.display = "none";
 
 calculatorToggle.addEventListener("click", function () {
     if (calculatorModal.style.display == "none") {
+        calculatorModal.classList.remove("hide-modal");
+        calculatorModal.classList.add("show-modal");
         calculatorModal.style.display = "block";
+        setTimeout(function () {
+            calculatorModal.classList.remove("show-modal");
+        }, 400)
     } else {
-        calculatorModal.style.display = "none";
+        calculatorModal.classList.add("hide-modal");
+        setTimeout(function () {
+            calculatorModal.style.display = "none";
+        }, 400)
+
     }
 })
+
 
 
 
