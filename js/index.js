@@ -56,7 +56,6 @@ calculatorToggle.addEventListener("click", function () {
 })
 
 
-// Change the icons inside the button based on previous settings
 if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     themeToggleLightIcon.classList.remove('hidden');
 } else {
@@ -65,11 +64,9 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
 
 themeToggleBtn.addEventListener('click', function () {
 
-    // toggle icons inside button
     themeToggleDarkIcon.classList.toggle('hidden');
     themeToggleLightIcon.classList.toggle('hidden');
 
-    // if set via local storage previously
     if (localStorage.getItem('color-theme')) {
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.add('dark');
@@ -78,8 +75,6 @@ themeToggleBtn.addEventListener('click', function () {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
         }
-
-        // if NOT set via local storage previously
     } else {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
