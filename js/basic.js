@@ -11,7 +11,7 @@ function areaRect(length, width) {
     </div>`;
     } else {
         let area = length * width;
-        computedArea.innerHTML = `<span class="font-semibold">Rectangle</span><br> Length = ${length} | Width = ${width} <br><br> Area = Length &times; Width <br> Area = ${length} &times; ${width} <br> <span class="font-bold">Area = ${area}</span>`;
+        computedArea.innerHTML = `<span class="font-bold text-lg font-roboto">Rectangle</span> <br><br> Area = Length &times; Width <br> Area = ${length} &times; ${width} <br> <span class="font-bold text-amber-500">Area = ${area}</span>`;
     }
 }
 
