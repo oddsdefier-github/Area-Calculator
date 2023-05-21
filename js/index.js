@@ -5,8 +5,21 @@ const calculatorToggle = document.getElementById("show-calc");
 let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 let themeToggleBtn = document.getElementById('theme-toggle');
+calculatorModal.style.display = "none";
 
 
+function resetInput() {
+    calculatorForm.reset();
+    resultElement.innerHTML = "Enter the length and width of a rectangle.";
+}
+
+function areaRect(length, width) {
+    const area = length * width;
+    const roundedArea = area % 1 === 0 ? area : area.toFixed(2);
+    resultElement.innerHTML = `<span class="py-5">Area = Length &times; Width <br> Area = ${length} &times; ${width} <br> <span class="dark:text-yellow-100 ">Area = <span class="font-bold">${roundedArea}</span></span></span>`;
+    resultElement.classList.add("animate-result");
+    return roundedArea;
+}
 
 calculatorForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -14,27 +27,17 @@ calculatorForm.addEventListener('submit', function (event) {
     const widthRect = parseFloat(document.getElementById('width').value);
     areaRect(lengthRect, widthRect);
     calculatorForm.reset();
+    resultElement.classList.remove("flex", "items-center", "justify-center");
     setTimeout(function () {
         resultElement.classList.remove("animate-result");
     }, 1000)
+
 });
 
-function resetInput() {
-    calculatorForm.reset();
-}
 
-function areaRect(length, width) {
-    const area = length * width;
-    const roundedArea = area % 1 === 0 ? area : area.toFixed(2);
-    resultElement.innerHTML = `<span class="dark:text-yellow-100 ">Area = <span class="font-bold">${roundedArea}</span> </span>`;
-    resultElement.classList.add("animate-result");
-    return roundedArea;
-}
-
-
-calculatorModal.style.display = "none";
 calculatorToggle.addEventListener("click", function () {
     if (calculatorModal.style.display == "none") {
+        calculatorToggle.classList.remove("bounce");
         calculatorModal.classList.remove("hide-modal");
         calculatorModal.classList.add("show-modal");
         calculatorModal.style.display = "block";
@@ -46,7 +49,9 @@ calculatorToggle.addEventListener("click", function () {
         setTimeout(function () {
             calculatorModal.style.display = "none";
         }, 400)
-
+        setTimeout(function () {
+            calculatorToggle.classList.add("bounce");
+        }, 400)
     }
 })
 
@@ -84,7 +89,6 @@ themeToggleBtn.addEventListener('click', function () {
             localStorage.setItem('color-theme', 'dark');
         }
     }
-
 });
 
 

@@ -11,11 +11,9 @@ function areaRect(length, width) {
     </div>`;
     } else {
         let area = length * width;
-        computedArea.innerHTML = `<span class="font-semibold">Rectangle</span><br> Length = ${length} | Width = ${width} <br><br> Area = Length * Width <br> Area = ${length} * ${width} <br> <span class="font-bold">Area = ${area}</span>`;
+        computedArea.innerHTML = `<span class="font-semibold">Rectangle</span><br> Length = ${length} | Width = ${width} <br><br> Area = Length &times; Width <br> Area = ${length} &times; ${width} <br> <span class="font-bold">Area = ${area}</span>`;
     }
 }
-
-
 
 showCalculator.addEventListener("click", function () {
     let lengthRect = +(prompt("Length of Rectangle", "Enter the Length of the Rectangle"));

@@ -17,18 +17,19 @@
 		<script src="./js/index.js" defer></script>
 	</head>
 	<body class="overflow-hidden bg-gray-50 transition-all font-inter dark:bg-gray-700">
+		<div class="absolute top-0 z-50 flex h-screen w-0 items-center justify-center bg-orange-600 text-white" id="transition"></div>
 		<section class="h-screen w-screen">
 			<nav class="border-gray-200 dark:bg-gray-800">
 				<div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
 					<div>
 						<a href="basic.html">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-5 w-5 stroke-gray-700 dark:stroke-gray-400">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-5 w-5 stroke-gray-700 hover:stroke-purple-700 dark:stroke-gray-200 dark:hover:stroke-purple-300"">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
 							</svg>
 						</a>
 					</div>
 					<div title="Switch to Prompt">
-						<span class="self-center whitespace-nowrap font-roboto font-semibold text-lg dark:text-gray-200">Calculate Area of Rectangle Using Modal</span>
+						<span class="self-center whitespace-nowrap font-roboto font-semibold text-lg dark:text-gray-200">Calculate Area of Rectangle Using <span class="text-purple-500 font-semibold font-roboto">Modal</span></span>
 					</div>
 					<div class="hidden w-full md:block md:w-auto" id="navbar-default">
 						<button id="theme-toggle" type="button" class="rounded-lg p-2 text-gray-500 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
@@ -45,7 +46,7 @@
 			<main class="mx-auto flex h-full max-w-screen-xl flex-1 flex-col items-center justify-center">
 				<button id="show-calc" class="mb-5 transition duration-300 ease-in-out focus:outline-none">
 					<span>
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-7 w-7 stroke-gray-800 hover:stroke-purple-700 dark:stroke-gray-200 dark:hover:stroke-purple-300">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" id="calc-icon" class="h-7 w-7 stroke-gray-800 hover:stroke-purple-700 dark:stroke-gray-200 dark:hover:stroke-purple-300 transition duration-100 hover:rotate-6">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z" />
 						</svg>
 					</span>
@@ -54,8 +55,8 @@
 					<div class="rounded-t-md border-b border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-slate-800">
 						<h1 class="p-5 font-roboto font-bold text-xl">Rectangle</h1>
 					</div>
-					<div class="border-b border-gray-100 dark:border-gray-700">
-						<div id="result" class="flex items-center justify-center py-5">Enter the length and width of a rectangle.</div>
+					<div class="border-b border-gray-100 dark:border-gray-700 flex items-center justify-center">
+						<div id="result" class="py-5">Enter the length and width of a rectangle.</div>
 					</div>
 					<div class="flex flex-col items-center justify-center px-16 lg:px-10">
 						<form id="calculatorForm" class="flex flex-col items-center justify-center gap-2 px-10 py-10">
